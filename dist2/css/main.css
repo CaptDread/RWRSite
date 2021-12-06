@@ -1,0 +1,399 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+/* 0. Reset ================================= */
+/* 
+If you want to add partials, use Sass Modules via @use:
+@use 'variables';
+
+Usage: partial-name.variable/mixin/function-name:
+background: variables.$primary-color;
+*/
+/* 0. Breakpoints ==================================== */
+/* 1. Colors ========================================= */
+/* 2. Fonts  ========================================= */
+/* 0. Breakpoints ==================================== */
+/* 1. Colors ========================================= */
+/* 2. Fonts  ========================================= */
+/* 1. Main Layout ================================= */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: #ffffff;
+}
+
+/* 2. Content ================================= */
+body {
+	font-family: "Montserrat", sans-serif;
+	display: flex;
+	flex-direction: column;
+	padding: 45px 7%;
+}
+body .review_head {
+	color: #1d1c1e;
+	text-transform: capitalize;
+	text-align: left;
+	font-weight: 900;
+	font-size: 24px;
+	line-height: 130px;
+}
+@media screen and (min-width: 1020px) {
+	body .review_head {
+		text-align: center;
+	}
+}
+
+.review_summary {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(2, 1fr), 0.5fr, 0.5fr;
+	gap: 1em;
+	max-height: 350px;
+}
+.review_summary .review_summary-options {
+	grid-column: 1/5;
+	height: 100%;
+}
+.review_summary .review_summary-contact {
+	grid-column: 2/5;
+}
+.review_summary .review_summary-rating {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	padding-bottom: 5px;
+}
+.review_summary .review_summary-rating .review_summary-ratingContent {
+	display: flex;
+	flex-direction: column;
+}
+.review_summary .review_summary-rating .review_summary-ratingContent .review_summary-ratingFlt {
+	font-size: 37px;
+	font-weight: bolder;
+}
+.review_summary .review_summary-rating .review_summary-ratingContent .review_summary-ratingStars {
+	color: #ffab41;
+	font-size: 21px;
+}
+.review_summary .review_summary-rating .review_summary-calc {
+	font-size: 15px;
+	margin-top: 20px;
+	text-align: left;
+}
+.review_summary .review_summary-ranks {
+	display: flex;
+	flex-direction: column;
+	padding: 5px 5%;
+	opacity: 100%;
+	border-left: solid 0.42px rgba(153, 153, 153, 0.342);
+	border-right: solid 0.42px rgba(153, 153, 153, 0.342);
+	margin-top: 20px;
+	justify-content: space-between;
+}
+.review_summary .review_summary-ranks .review_summary-rank {
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+	opacity: 100%;
+}
+.review_summary .review_summary-ranks .review_summary-rank .rankStars {
+	color: #999;
+	font-size: 12px;
+	display: flex;
+	justify-content: space-between;
+	width: 27%;
+}
+.review_summary .review_summary-ranks .review_summary-rank .rankBars {
+	width: 130px;
+	height: 15px;
+	background-color: #f0f0f0;
+	border-radius: 6.66%;
+	display: flex;
+	justify-content: left;
+}
+.review_summary .review_summary-ranks .review_summary-rank .rankBars .rankBars_5 {
+	background-color: #ffab41;
+	width: 91%;
+}
+.review_summary .review_summary-ranks .review_summary-rank .rankBars .rankBars_4 {
+	background-color: #ffab41;
+	width: 7%;
+}
+.review_summary .review_summary-ranks .review_summary-rank .rankBars .rankBars_3 {
+	background-color: #ffab41;
+	width: 2%;
+}
+.review_summary .review_summary-ranks .review_summary-rank .rankINT {
+	text-align: left;
+	width: 10%;
+	color: #737978;
+	font-size: 12px;
+}
+.review_summary .review_summary-ranks .faded {
+	opacity: 50%;
+}
+.review_summary .review_summary-images {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	margin-top: 20px;
+}
+.review_summary .review_summary-images figure {
+	width: 80%;
+	opacity: 100%;
+}
+.review_summary .review_summary-images figure img {
+	width: 100%;
+}
+.review_summary .review_summary-images .faded {
+	opacity: 50%;
+}
+.review_summary .review_summary-contact {
+	grid-column: 1/6;
+	display: flex;
+	justify-content: center;
+	gap: 1em;
+	margin-top: 20px;
+}
+.review_summary .review_summary-contact button {
+	color: #000;
+	text-align: center;
+	border: 2px solid #212721;
+	box-shadow: 2px 3px 5px 0 #8888886b;
+	padding: 3px 20px;
+	border-radius: 3px;
+	font-weight: 700;
+	font-size: 13px;
+	line-height: 30px;
+	background-color: rgba(0, 0, 0, 0);
+	opacity: 100%;
+}
+.review_summary .review_summary-contact button:hover {
+	box-shadow: none;
+	opacity: 80%;
+}
+@media screen and (min-width: 630px) {
+	.review_summary {
+		grid-template-columns: repeat(8, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+	.review_summary .review_summary-rating {
+		grid-area: 1/1/2/4;
+		width: 100%;
+	}
+	.review_summary .review_summary-ranks {
+		grid-area: 1/4/2/9;
+	}
+	.review_summary .review_summary-images {
+		grid-area: 2/1/3/5;
+	}
+	.review_summary .review_summary-contact {
+		grid-area: 2/5/3/9;
+		align-items: center;
+	}
+	.review_summary .review_summary-contact button {
+		height: -webkit-min-content;
+		height: min-content;
+		padding: 2px 4px;
+	}
+}
+@media screen and (min-width: 1020px) {
+	.review_summary {
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: 1fr, 0.5fr;
+	}
+	.review_summary .review_summary-rating {
+		grid-area: 1/1/2/2;
+		width: 100%;
+		padding-bottom: 20px;
+	}
+	.review_summary .review_summary-ranks {
+		grid-area: 1/2/2/4;
+	}
+	.review_summary .review_summary-images {
+		grid-area: 1/4/2/7;
+	}
+	.review_summary .review_summary-contact {
+		grid-area: 2/1/3/7;
+		align-items: center;
+	}
+	.review_summary .review_summary-contact button {
+		height: -webkit-min-content;
+		height: min-content;
+		padding: 3px 20px;
+	}
+}
+@media screen and (min-width: 1400px) {
+	.review_summary {
+		grid-template-columns: repeat(7, 1fr);
+		grid-template-rows: 1fr;
+	}
+	.review_summary .review_summary-rating {
+		grid-area: 1/1/2/2;
+		width: 100%;
+	}
+	.review_summary .review_summary-ranks {
+		grid-area: 1/2/2/4;
+	}
+	.review_summary .review_summary-images {
+		grid-area: 1/4/2/6;
+	}
+	.review_summary .review_summary-contact {
+		grid-area: 1/6/2/8;
+		align-items: center;
+	}
+	.review_summary .review_summary-contact button {
+		height: -webkit-min-content;
+		height: min-content;
+		padding: 3px 20px;
+	}
+}
+/*# sourceMappingURL=main.css.map */
